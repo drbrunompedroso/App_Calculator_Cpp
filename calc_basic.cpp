@@ -2,64 +2,46 @@
 #include<math.h>
 #include<stdlib.h>
 
-float value1,
-      value2,
-      result,
-      result2;
-char oper;
+float Value1,
+      Value2,
+      Result;
+
+char Oper;
 
 int main(void)
 {
     printf("Exercicio calculadora em C++ \n");
     printf("Entre com V1: \n");
-    scanf("%f",&value1);
+    scanf("%f",&Value1);
     printf("Entre com V2: \n");
-    scanf("%f",&value2);
+    scanf("%f",&Value2);
 
     printf("Entre com a operacao matematica:\n");
-    printf("+ --> SOMA; \n- --> SUBTRACAO; \n* --> MULTIPLICACAO; \n/ --> DIVISAO; \nP --> POTENCIACAO; \n");
-    scanf("%s",&oper);
+    printf("+ --> SOMA; \n- --> SUBTRACAO; \n* --> MULTIPLICACAO; \n/ --> DIVISAO; \n");
+    scanf("%s",&Oper);
 
-    switch(oper)
+    switch(Oper)
     {
         case '+':
-            result = value1 + value2;
-            printf("Resultado = %f",result);
+            Result = Value1 + Value2;
+           
         break;
         case '-':
-            result = value1 - value2;
-            printf("Resultado = %f",result);
+            Result = Value1 - Value2;
+            
         break;
         case '*':
-            result = value1 * value2;
-            printf("Resultado = %f",result);
+            Result = Value1 * Value2;
+          
         break;
         case '/':
-            result = value1 / value2;
-            printf("Resultado = %f",result);
-        break;
-        case 'P':
-            result = pow(value1, 2);
-            result2 = pow(value2, 2);
-            printf("Resultado 1 = %f",result);
-            printf("\nResultado 2 = %f",result2);
+            Result = Value1 / Value2;
+            
         break;
         default:
-            printf("\nOPERACAO INVALIDA");
+            printf("\nOPERACAO INVALIDA\n");
         break;
     }
-
-    if(result < 10.0)
-    {
-        printf("\nRESULTADO MENOR QUE 10");
-    }
-    else if(result >= 10 && result < 100)
-    {
-        printf("\nRESULTADO ENTRE 10 E 100");
-    }
-    else
-    {
-        printf("\nRESULTADO ACIMA DE 100");
-    }
+    printf("Resultado = %.2f \n",Result);
     system("pause");
 }
